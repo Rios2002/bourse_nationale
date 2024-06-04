@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Universite
  *
- * @property $CodeUniversites
- * @property $LibelleUniversites
+ * @property $CodeUniversite
+ * @property $LibelleUniversite
  * @property $created_at
  * @property $updated_at
  *
@@ -20,9 +20,7 @@ class Universite extends Model
     
     protected $perPage = 20;
 
-    protected $primaryKey = 'CodeUniversite';
-    public $incrementing = false;
-    public $keyType = 'string';
+    
 
     /**
      * The attributes that are mass assignable.
@@ -31,5 +29,7 @@ class Universite extends Model
      */
     protected $fillable = ['CodeUniversite', 'LibelleUniversite'];
 
-
+    protected $primaryKey = 'CodeUniversite';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

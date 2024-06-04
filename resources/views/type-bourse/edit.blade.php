@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Type Bourse</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('type-bourses.update', $typeBourse->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('type-bourses.update', $typeBourse->CodeTypeBourse) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

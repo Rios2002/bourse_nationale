@@ -27,5 +27,7 @@ class TypeBourse extends Model
      */
     protected $fillable = ['CodeTypeBourse', 'LibelleTypeBourse'];
 
-
+    protected $primaryKey = 'CodeTypeBourse';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

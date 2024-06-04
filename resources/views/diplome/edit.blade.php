@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Diplome</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('diplomes.update', $diplome->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('diplomes.update', $diplome->CodeDiplome) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

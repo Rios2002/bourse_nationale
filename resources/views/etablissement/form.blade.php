@@ -13,7 +13,15 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="code_universite" class="form-label">{{ __('Codeuniversite') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="CodeUniversite" class="form-control @error('CodeUniversite') is-invalid @enderror rounded-05" value="{{ old('CodeUniversite', $etablissement?->CodeUniversite) }}" id="code_universite" >
+            <!-- <input type="text" name="CodeUniversite" class="form-control @error('CodeUniversite') is-invalid @enderror rounded-05" value="{{ old('CodeUniversite', $etablissement?->CodeUniversite) }}" id="code_universite" > -->
+           <select name="CodeUniversite" id=""
+                class="form-select select2 form-control  @error('CodeUniversite') is-invalid @enderror">
+                <option value="">-- Sélectionner --</option>
+                @foreach ($universites as $universite)
+                    <option value="{{$universite->CodeUniversite}}" @if ($universite->CodeUniversite == old('CodeUniversite', $etablissement?->CodeUniversite)) selected @endif>
+                        {{ $universite->LibelleUniversite }}</option>
+                @endforeach
+            </select>
             {!! $errors->first('CodeUniversite', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

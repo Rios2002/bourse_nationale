@@ -26,5 +26,7 @@ class AnneeEtude extends Model
      */
     protected $fillable = ['CodeAnneeEtude'];
 
-
+    protected $primaryKey = 'CodeAnneeEtude';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

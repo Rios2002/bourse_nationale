@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Annee Etude</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('annee-etudes.update', $anneeEtude->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('annee-etudes.update', $anneeEtude->CodeAnneeEtude) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

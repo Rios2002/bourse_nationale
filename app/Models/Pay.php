@@ -27,5 +27,7 @@ class Pay extends Model
      */
     protected $fillable = ['CodePays', 'LibellePays'];
 
-
+    protected $primaryKey = 'CodePays';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Universite</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('universites.update', $universite->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('universites.update', $universite->CodeUniversite) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

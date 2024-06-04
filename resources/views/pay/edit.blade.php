@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Pay</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('pays.update', $pay->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('pays.update', $pay->CodePays) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

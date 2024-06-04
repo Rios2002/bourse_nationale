@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etablissement;
 use App\Models\Filiere;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,8 +29,9 @@ class FiliereController extends Controller
     public function create(): View
     {
         $filiere = new Filiere();
+        $etablissements = Etablissement::all();
 
-        return view('filiere.create', compact('filiere'));
+        return view('filiere.create', compact('filiere', 'etablissements'));
     }
 
     /**
@@ -60,8 +62,9 @@ class FiliereController extends Controller
     public function edit($id): View
     {
         $filiere = Filiere::findOrFail($id);
+        $etablissements = Etablissement::all();
 
-        return view('filiere.edit', compact('filiere'));
+        return view('filiere.edit', compact('filiere', 'etablissements'));
     }
 
     /**

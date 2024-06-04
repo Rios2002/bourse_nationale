@@ -26,13 +26,13 @@
 
                         <div class="col-lg-4">
                             <strong class="text-dark ">Codeuniversites:</strong>
-                            <input type="text" class="form-control rounded-05 my-1 text-dark" value="{{ $universite->CodeUniversites }}"
+                            <input type="text" class="form-control rounded-05 my-1 text-dark" value="{{ $universite->CodeUniversite }}"
                                 readonly>
                         </div>
 
                         <div class="col-lg-4">
                             <strong class="text-dark ">Libelleuniversites:</strong>
-                            <input type="text" class="form-control rounded-05 my-1 text-dark" value="{{ $universite->LibelleUniversites }}"
+                            <input type="text" class="form-control rounded-05 my-1 text-dark" value="{{ $universite->LibelleUniversite }}"
                                 readonly>
                         </div>
 

@@ -30,5 +30,7 @@ class AnneeAcademique extends Model
      */
     protected $fillable = ['CodeAnneeAcademique', 'LibelleAnneeAcademique', 'DebutEcheance', 'FinEcheance', 'StatutAnneeAcademique'];
 
-
+    protected $primaryKey = 'CodeAnneeAcademique';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

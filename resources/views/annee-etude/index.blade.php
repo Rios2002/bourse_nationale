@@ -57,17 +57,17 @@
                                                         style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-20px, 1.6px, 0px);"
                                                         data-popper-placement="left-start">
                                                         <li>
-                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('annee-etudes.show',$anneeEtude->id) }}">
+                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('annee-etudes.show',$anneeEtude->CodeAnneeEtude) }}">
                                                                 <i class="fs-4 ti ti-eye"></i> Détails
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('annee-etudes.edit',$anneeEtude->id) }}">
+                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('annee-etudes.edit',$anneeEtude->CodeAnneeEtude) }}">
                                                                 <i class="fs-4 ti ti-edit"></i> Modifier
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <form action="{{ route('annee-etudes.destroy',$anneeEtude->id) }}" method="POST">
+                                                            <form action="{{ route('annee-etudes.destroy',$anneeEtude->CodeAnneeEtude) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger">
@@ -84,10 +84,10 @@
                                                             Actions
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="{{ route('annee-etudes.show',$anneeEtude->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Détails') }}</a>
-                                                            <a class="dropdown-item" href="{{ route('annee-etudes.edit',$anneeEtude->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modifier') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('annee-etudes.show',$anneeEtude->CodeAnneeEtude) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Détails') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('annee-etudes.edit',$anneeEtude->CodeAnneeEtude) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modifier') }}</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <form action="{{ route('annee-etudes.destroy',$anneeEtude->id) }}" method="POST">
+                                                            <form action="{{ route('annee-etudes.destroy',$anneeEtude->CodeAnneeEtude) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger"><i class="fa fa-fw fa-trash"></i> {{ __('Supprimer') }}</button>

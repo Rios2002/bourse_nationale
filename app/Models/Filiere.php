@@ -29,7 +29,9 @@ class Filiere extends Model
      */
     protected $fillable = ['CodeFiliere', 'LibelleFiliere', 'CodeEtablissement'];
 
-
+    protected $primaryKey = 'CodeFiliere';
+    public $incrementing = false;
+    public $keyType = 'string';
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

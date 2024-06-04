@@ -22,9 +22,7 @@ class Etablissement extends Model
     
     protected $perPage = 20;
 
-    protected $primaryKey = 'CodeEtablissement';
-    public $incrementing = false;
-    public $keyType = 'string';
+    
 
     /**
      * The attributes that are mass assignable.
@@ -33,7 +31,9 @@ class Etablissement extends Model
      */
     protected $fillable = ['CodeEtablissement', 'LibelleEtablissement', 'CodeUniversite'];
 
-
+    protected $primaryKey = 'CodeEtablissement';
+    public $incrementing = false;
+    public $keyType = 'string';
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

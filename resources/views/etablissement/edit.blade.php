@@ -26,7 +26,7 @@
                             <span>Formulaire de modification: Etablissement</span>
                             <hr>
                         </div>
-                        <form method="POST" action="{{ route('etablissements.update', $etablissement->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('etablissements.update', $etablissement->CodeEtablissement) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

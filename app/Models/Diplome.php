@@ -27,5 +27,7 @@ class Diplome extends Model
      */
     protected $fillable = ['CodeDiplome', 'LibelleDiplome'];
 
-
+    protected $primaryKey = 'CodeDiplome';
+    public $incrementing = false;
+    public $keyType = 'string';
 }

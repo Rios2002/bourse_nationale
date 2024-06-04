@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etablissement;
+use App\Models\Universite;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\EtablissementRequest;
@@ -28,8 +29,9 @@ class EtablissementController extends Controller
     public function create(): View
     {
         $etablissement = new Etablissement();
+        $universites = Universite::all();
 
-        return view('etablissement.create', compact('etablissement'));
+        return view('etablissement.create', compact('etablissement', 'universites'));
     }
 
     /**
@@ -60,8 +62,9 @@ class EtablissementController extends Controller
     public function edit($id): View
     {
         $etablissement = Etablissement::findOrFail($id);
+        $universites = Universite::all();
 
-        return view('etablissement.edit', compact('etablissement'));
+        return view('etablissement.edit', compact('etablissement', 'universites'));
     }
 
     /**

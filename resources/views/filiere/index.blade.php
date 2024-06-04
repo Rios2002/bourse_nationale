@@ -61,17 +61,17 @@
                                                         style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-20px, 1.6px, 0px);"
                                                         data-popper-placement="left-start">
                                                         <li>
-                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('filieres.show',$filiere->id) }}">
+                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('filieres.show',$filiere->CodeFiliere) }}">
                                                                 <i class="fs-4 ti ti-eye"></i> Détails
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('filieres.edit',$filiere->id) }}">
+                                                            <a class="dropdown-item d-flex align-items-center gap-3" href="{{ route('filieres.edit',$filiere->CodeFiliere) }}">
                                                                 <i class="fs-4 ti ti-edit"></i> Modifier
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <form action="{{ route('filieres.destroy',$filiere->id) }}" method="POST">
+                                                            <form action="{{ route('filieres.destroy',$filiere->CodeFiliere) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger">
@@ -88,10 +88,10 @@
                                                             Actions
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="{{ route('filieres.show',$filiere->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Détails') }}</a>
-                                                            <a class="dropdown-item" href="{{ route('filieres.edit',$filiere->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modifier') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('filieres.show',$filiere->CodeFiliere) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Détails') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('filieres.edit',$filiere->CodeFiliere) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modifier') }}</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <form action="{{ route('filieres.destroy',$filiere->id) }}" method="POST">
+                                                            <form action="{{ route('filieres.destroy',$filiere->CodeFiliere) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger"><i class="fa fa-fw fa-trash"></i> {{ __('Supprimer') }}</button>
