@@ -8,7 +8,15 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="libelle_type_bourse" class="form-label">{{ __('Libelletypebourse') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="LibelleTypeBourse" class="form-control @error('LibelleTypeBourse') is-invalid @enderror rounded-05" value="{{ old('LibelleTypeBourse', $typeBourse?->LibelleTypeBourse) }}" id="libelle_type_bourse" >
+            <!-- <input type="text" name="LibelleTypeBourse" class="form-control @error('LibelleTypeBourse') is-invalid @enderror rounded-05" value="{{ old('LibelleTypeBourse', $typeBourse?->LibelleTypeBourse) }}" id="libelle_type_bourse" > -->
+            <select name="LibelleTypeBourse" id=""
+                class="form-select select2 form-control  @error('LibelleTypeBourse') is-invalid @enderror">
+                <option value="{{ $typeBourse?->LibelleTypeBourse }}">{{ $typeBourse?->LibelleTypeBourse }}</option>
+                <option value="Bourse d'Excellence">Bourse d'Excellence</option>
+                <option value="Bourse Inter-Etats">Bourse Inter-Etats</option>
+                <option value="Bourse Enfant de Diplomate">Bourse Enfant de Diplomate</option>
+                
+            </select>
             {!! $errors->first('LibelleTypeBourse', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

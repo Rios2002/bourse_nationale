@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PvController;
+use App\Http\Controllers\LotController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TauxController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\EligibleController;
 use App\Http\Controllers\AnneeEtudeController;
 use App\Http\Controllers\TypeBourseController;
 use App\Http\Controllers\UniversiteController;
@@ -49,6 +53,10 @@ Route::middleware(['auth', 'permission:gerer parametre de base systeme'])->group
     Route::resource('filieres', FiliereController::class);
     Route::resource('piece-jointes', PieceJointeController::class);
     Route::resource('type-bourses', TypeBourseController::class);
+    Route::resource('pvs', PvController::class);
+    Route::resource('lots', LotController::class);
+    Route::resource('tauxes', TauxController::class);
+    Route::resource('eligibles', EligibleController::class);
     Route::resource('formulaires', FormulaireController::class);
     Route::resource('type-champs', TypeChampController::class, ["only" => ["index", "show"]]);
     Route::resource('champ-formulaires', ChampFormulaireController::class, ["only" => ["store", "destroy"]]);

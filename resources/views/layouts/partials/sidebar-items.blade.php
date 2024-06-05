@@ -143,6 +143,46 @@
     </li>
 @endhaspermission
 
+@haspermission('gerer parametre de base systeme')
+    <li class="sidebar-item">
+        <a class="sidebar-link success-hover-bg" href="{{ route('pvs.index') }}" aria-expanded="false">
+            <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
+            <span class="hide-menu ps-1">PV</span>
+        </a>
+        
+    </li>
+@endhaspermission
+
+@haspermission('gerer parametre de base systeme')
+    <li class="sidebar-item">
+        <a class="sidebar-link success-hover-bg" href="{{ route('lots.index') }}" aria-expanded="false">
+            <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
+            <span class="hide-menu ps-1">Lot</span>
+        </a>
+        
+    </li>
+@endhaspermission
+
+@haspermission('gerer parametre de base systeme')
+    <li class="sidebar-item">
+        <a class="sidebar-link success-hover-bg" href="{{ route('tauxes.index') }}" aria-expanded="false">
+            <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
+            <span class="hide-menu ps-1">Taux</span>
+        </a>
+        
+    </li>
+@endhaspermission
+
+@haspermission('gerer parametre de base systeme')
+    <li class="sidebar-item">
+        <a class="sidebar-link success-hover-bg" href="{{ route('eligibles.index') }}" aria-expanded="false">
+            <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
+            <span class="hide-menu ps-1">Eligibles</span>
+        </a>
+        
+    </li>
+@endhaspermission
+
 @haspermission('gerer parametre des bourses')
     <li class="sidebar-item">
         <a class="sidebar-link has-arrow success-hover-bg" href="javascript:void(0)" aria-expanded="false">

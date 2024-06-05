@@ -13,12 +13,12 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="debut_echeance" class="form-label">{{ __('Debutecheance') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="DebutEcheance" class="form-control @error('DebutEcheance') is-invalid @enderror rounded-05" value="{{ old('DebutEcheance', $anneeAcademique?->DebutEcheance) }}" id="debut_echeance" >
+            <input type="date" name="DebutEcheance" class="form-control @error('DebutEcheance') is-invalid @enderror rounded-05" value="{{ old('DebutEcheance', $anneeAcademique?->DebutEcheance) }}" id="debut_echeance" >
             {!! $errors->first('DebutEcheance', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="fin_echeance" class="form-label">{{ __('Finecheance') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="FinEcheance" class="form-control @error('FinEcheance') is-invalid @enderror rounded-05" value="{{ old('FinEcheance', $anneeAcademique?->FinEcheance) }}" id="fin_echeance" >
+            <input type="date" name="FinEcheance" class="form-control @error('FinEcheance') is-invalid @enderror rounded-05" value="{{ old('FinEcheance', $anneeAcademique?->FinEcheance) }}" id="fin_echeance" >
             {!! $errors->first('FinEcheance', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">

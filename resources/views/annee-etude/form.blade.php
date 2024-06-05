@@ -3,7 +3,20 @@
         
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="code_annee_etude" class="form-label">{{ __('Codeanneeetude') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="CodeAnneeEtude" class="form-control @error('CodeAnneeEtude') is-invalid @enderror rounded-05" value="{{ old('CodeAnneeEtude', $anneeEtude?->CodeAnneeEtude) }}" id="code_annee_etude" >
+            <!-- <input type="text" name="CodeAnneeEtude" class="form-control @error('CodeAnneeEtude') is-invalid @enderror rounded-05" value="{{ old('CodeAnneeEtude', $anneeEtude?->CodeAnneeEtude) }}" id="code_annee_etude" > -->
+            @php
+            $anneeEtude=[];
+            for ($i=date('Y'); $i > date ('Y') - 15; $i--){
+                $anneeEtude[$i] = $i . '-' . ($i + 1);
+            }
+            @endphp
+            <select name="CodeAnneeEtude" id="" class="form-select " >
+                @foreach ($anneeEtude as $value)
+                <option value="{{$value}}">
+                    {{$value}}
+                </option>
+                @endforeach
+            </select>
             {!! $errors->first('CodeAnneeEtude', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

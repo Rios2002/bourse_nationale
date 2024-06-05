@@ -29,6 +29,7 @@ class TypeBourseController extends Controller
     {
         $typeBourse = new TypeBourse();
 
+
         return view('type-bourse.create', compact('typeBourse'));
     }
 
