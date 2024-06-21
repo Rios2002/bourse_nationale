@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="taux" class="form-label">{{ __('Taux') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="taux" class="form-control @error('taux') is-invalid @enderror rounded-05" value="{{ old('taux', $taux?->taux) }}" id="taux" >
+            <input type="number" name="taux" class="form-control @error('taux') is-invalid @enderror rounded-05" value="{{ old('taux', $taux?->taux) }}" id="taux" >
             {!! $errors->first('taux', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

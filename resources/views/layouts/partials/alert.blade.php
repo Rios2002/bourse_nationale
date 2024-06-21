@@ -1,3 +1,15 @@
+
+@if (session()->has('message'))
+    <div class="alert alert-info " role="alert">
+        <h5 class="alert-title">
+            <i class="fa fa-info-circle me-2"></i> Information
+        </h5>
+        <div class="">
+            {{ session('message') }}
+        </div>
+    </div>
+@endif
+
 @if (session()->has('successMessage'))
     <div class="alert alert-success " role="alert">
         <h5 class="alert-title">

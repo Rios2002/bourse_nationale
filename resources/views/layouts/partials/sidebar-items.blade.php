@@ -5,11 +5,46 @@
     </a>
 </li> --}}
 <li class="sidebar-item">
-    <a class="sidebar-link primary-hover-bg" href="" aria-expanded="false">
+    <a class="sidebar-link primary-hover-bg" href="/" aria-expanded="false">
         <iconify-icon icon="iconamoon:home" class="fs-6 aside-icon"></iconify-icon>
         <span class="hide-menu ps-1">Accueil</span>
     </a>
 </li>
+@role('Boursier')
+<li class="sidebar-item">
+    <a class="sidebar-link has-arrow success-hover-bg" href="javascript:void(0)" aria-expanded="false">
+        <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
+        <span class="hide-menu ps-1">Demandes</span>
+    </a>
+    <ul aria-expanded="false" class="collapse first-level">
+
+        <li class="sidebar-item">
+            <a class="sidebar-link primary-hover-bg" href="{{ route('demande-reclamations.index') }}" aria-expanded="false">
+                <iconify-icon icon="iconamoon:home" class="fs-6 aside-icon"></iconify-icon>
+                <span class="hide-menu ps-1">Réclamation</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link primary-hover-bg" href="{{ route('demande-paiements.index') }}" aria-expanded="false">
+                <iconify-icon icon="iconamoon:home" class="fs-6 aside-icon"></iconify-icon>
+                <span class="hide-menu ps-1">Paiement</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link primary-hover-bg" href="{{ route('demande-billets.index') }}" aria-expanded="false">
+                <iconify-icon icon="iconamoon:home" class="fs-6 aside-icon"></iconify-icon>
+                <span class="hide-menu ps-1">Billet</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link primary-hover-bg" href="{{ route('demande-allocations.index') }}" aria-expanded="false">
+                <iconify-icon icon="iconamoon:home" class="fs-6 aside-icon"></iconify-icon>
+                <span class="hide-menu ps-1">Allocation</span>
+            </a>
+        </li>
+    </ul>
+</li>
+@endrole
 {{-- <li class="sidebar-item">
     <a class="sidebar-link primary-hover-bg" href="{{ route('users.index') }}" aria-expanded="false">
         <iconify-icon icon="icomoon-free:users" class="fs-6 aside-icon"></iconify-icon>
@@ -142,8 +177,8 @@
         </ul>
     </li>
 @endhaspermission
-
-@haspermission('gerer parametre de base systeme')
+@role('AdminGradeB|Super-admin')
+@haspermission('gerer pv')
     <li class="sidebar-item">
         <a class="sidebar-link success-hover-bg" href="{{ route('pvs.index') }}" aria-expanded="false">
             <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
@@ -153,7 +188,7 @@
     </li>
 @endhaspermission
 
-@haspermission('gerer parametre de base systeme')
+@haspermission('gerer lots')
     <li class="sidebar-item">
         <a class="sidebar-link success-hover-bg" href="{{ route('lots.index') }}" aria-expanded="false">
             <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
@@ -162,8 +197,9 @@
         
     </li>
 @endhaspermission
-
-@haspermission('gerer parametre de base systeme')
+@endrole
+@role('AdminGradeA|Super-admin')
+@haspermission('gerer taux')
     <li class="sidebar-item">
         <a class="sidebar-link success-hover-bg" href="{{ route('tauxes.index') }}" aria-expanded="false">
             <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
@@ -173,7 +209,7 @@
     </li>
 @endhaspermission
 
-@haspermission('gerer parametre de base systeme')
+@haspermission('gerer eligibles')
     <li class="sidebar-item">
         <a class="sidebar-link success-hover-bg" href="{{ route('eligibles.index') }}" aria-expanded="false">
             <iconify-icon icon="solar:layers-line-duotone" class="fs-6 aside-icon"></iconify-icon>
@@ -182,7 +218,7 @@
         
     </li>
 @endhaspermission
-
+@endrole
 @haspermission('gerer parametre des bourses')
     <li class="sidebar-item">
         <a class="sidebar-link has-arrow success-hover-bg" href="javascript:void(0)" aria-expanded="false">

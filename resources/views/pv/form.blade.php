@@ -23,12 +23,12 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="annee_civile" class="form-label">{{ __('Anneecivile') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="AnneeCivile" class="form-control @error('AnneeCivile') is-invalid @enderror rounded-05" value="{{ old('AnneeCivile', $pv?->AnneeCivile) }}" id="annee_civile" >
+            <input type="number" name="AnneeCivile" class="form-control @error('AnneeCivile') is-invalid @enderror rounded-05" value="{{ old('AnneeCivile', $pv?->AnneeCivile) }}" id="annee_civile" >
             {!! $errors->first('AnneeCivile', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="note_bas_page" class="form-label">{{ __('Notebaspage') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="NoteBasPage" class="form-control @error('NoteBasPage') is-invalid @enderror rounded-05" value="{{ old('NoteBasPage', $pv?->NoteBasPage) }}" id="note_bas_page" >
+            <input type="number" name="NoteBasPage" class="form-control @error('NoteBasPage') is-invalid @enderror rounded-05" value="{{ old('NoteBasPage', $pv?->NoteBasPage) }}" id="note_bas_page" >
             {!! $errors->first('NoteBasPage', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">

@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Database\Eloquent\Model;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -56,4 +57,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = ['name', 'email', 'password', 'last_login_at'];
+
+  
+   /**
+    * Get all of the eligible for the User
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function eligible()
+   {
+       return $this->hasMany(Eligible::class, 'user_id');
+   }
 }

@@ -51,7 +51,7 @@
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">
             <strong> <label for="moyenne" class="form-label">{{ __('Moyenne') }}</label> <!-- <strong class="text-danger"> * </strong> -->  </strong>
-            <input type="text" name="Moyenne" class="form-control @error('Moyenne') is-invalid @enderror rounded-05" value="{{ old('Moyenne', $eligible?->Moyenne) }}" id="moyenne" >
+            <input type="number" name="Moyenne" class="form-control @error('Moyenne') is-invalid @enderror rounded-05" value="{{ old('Moyenne', $eligible?->Moyenne) }}" id="moyenne" step="0.01" min="0" max="20">
             {!! $errors->first('Moyenne', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="col-lg-6 form-group mb-2 mb20">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\AnneeAcademique;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->double('Moyenne');
             $table->string('Mention');
             $table->date('DateNaissance');
+            $table->foreignIdFor(User::class)->nullable()->constrained('users','id');
+
             $table->timestamps();
         });
     }

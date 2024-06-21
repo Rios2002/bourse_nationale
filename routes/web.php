@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PvController;
 use App\Http\Controllers\LotController;
 use App\Http\Controllers\PayController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TauxController;
 use App\Http\Controllers\UserController;
@@ -15,8 +16,13 @@ use App\Http\Controllers\AnneeEtudeController;
 use App\Http\Controllers\TypeBourseController;
 use App\Http\Controllers\UniversiteController;
 use App\Http\Controllers\PieceJointeController;
+use App\Http\Controllers\DemandeBilletController;
 use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\AnneeAcademiqueController;
+use App\Http\Controllers\DemandePaiementController;
+use App\Http\Controllers\DemandeAllocationController;
+use App\Http\Controllers\DemandeReclamationController;
+use App\Http\Controllers\VerificationBoursierController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,8 +37,18 @@ Route::get('theme-toggle', function () {
     }
     return back();
 })->name('theme-toggle');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::middleware(['auth', 'update-last-login', 'VerificationBoursier',])->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
 Route::redirect('/home', '/');
+Route::middleware(['auth', 'update-last-login',])->group(function () {
+
+Route::get('verification-boursier',[VerificationBoursierController::class, 'index'] )->name('route-verification');
+Route::post('urlenregistrement',[VerificationBoursierController::class, 'store'] )->name('route-enregistrer');
+});
 
 Route::middleware(['auth', 'update-last-login', 'permission:gerer users',])->group(function () {
     Route::resource("users", UserController::class);
@@ -57,7 +73,24 @@ Route::middleware(['auth', 'permission:gerer parametre de base systeme'])->group
     Route::resource('lots', LotController::class);
     Route::resource('tauxes', TauxController::class);
     Route::resource('eligibles', EligibleController::class);
+    Route::resource('demande-reclamations', DemandeReclamationController::class);
+    Route::resource('demande-paiements', DemandePaiementController::class);
+    Route::resource('demande-billets', DemandeBilletController::class);
+    Route::resource('demande-allocations', DemandeAllocationController::class);
     Route::resource('formulaires', FormulaireController::class);
     Route::resource('type-champs', TypeChampController::class, ["only" => ["index", "show"]]);
     Route::resource('champ-formulaires', ChampFormulaireController::class, ["only" => ["store", "destroy"]]);
+});
+
+Route::middleware(['auth', 'permission:gerer lots'])->group(function () {
+    Route::resource("lots", LotController::class);
+});
+Route::middleware(['auth', 'permission:gerer pv'])->group(function () {
+    Route::resource("pvs", PvController::class);
+});
+Route::middleware(['auth', 'permission:gerer taux'])->group(function () {
+    Route::resource("tauxes", TauxController::class);
+});
+Route::middleware(['auth', 'permission:gerer eligibles'])->group(function () {
+    Route::resource('eligibles', EligibleController::class);
 });

@@ -35,8 +35,11 @@ class Eligible extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Num_table', 'CodeAnneeAcademique', 'Nom', 'Prenoms', 'Numero', 'Sexe', 'Serie', 'LieuNaissance', 'Moyenne', 'Mention', 'DateNaissance'];
+    protected $fillable = ['Num_table', 'user_id','CodeAnneeAcademique', 'Nom', 'Prenoms', 'Numero', 'Sexe', 'Serie', 'LieuNaissance', 'Moyenne', 'Mention', 'DateNaissance'];
 
+    protected $primaryKey = 'Num_table';
+    public $incrementing = false;
+    public $keyType = 'string';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
